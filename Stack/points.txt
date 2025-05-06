@@ -1,0 +1,24 @@
+Stack can be implimented by ARRAY,OBJECT,LINKEDList
+
+Mostly ARRAY has been Used
+Why ?
+cz of complexity
+1)Array 
+    for Enqueue (add to back) we use push, who's timeComplexity is                                           O(1) and 
+    for Dequeue (remove from back) we use pop, who's timeComplexity is                                       O(1) and 
+    Space Complexity                                                                                         O(n)
+
+2)Linked List
+    for Enqueue (add to back) we use node with some pointer to point next node address                       O(1) and 
+    for Dequeue (remove from back) we use node with some pointer to point next node address                  O(1)  and 
+    Space Complexity                                                                                         O(n) (more memory due to pointers)
+
+3)object
+    for Enqueue (add to back) we create array like obj logic , who's timeComplexity is                       O(1) and 
+    for Dequeue (remove from back) we create array like obj logic , who's timeComplexity is                  O(1)  and 
+    Space Complexity                                                                                         O(n) (extra memory for keys)
+
+There For,
+    Array can be best in this sittuvation 
+    cz no need to write our  logic code cz its alredy created 
+

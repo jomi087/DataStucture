@@ -1,0 +1,33 @@
+Queue can be implimented by ARRAY,OBJECT,LINKEDList
+
+Mostly ARRAY has been Used but HowEVER the best complexity will be by creating with Linked List 
+Why ?
+cz of complexity
+1)Array 
+    for Enqueue (add to back) we use push, who's timeComplexity is                                           O(1) and 
+    for Dequeue (remove from front) we use shift, who's timeComplexity is                                    O(n)  and 
+    Space Complexity                                                                                         O(n)
+
+2)Linked List
+    for Enqueue (add to back) we use node with some pointer to point next node address                       O(1) and 
+    for Dequeue (remove from front) we use node with some pointer to point next node address                 O(1)  and 
+    Space Complexity                                                                                         O(n)
+
+3)object
+    for Enqueue (add to back) we create array like obj logic , who's timeComplexity is                       O(1) and 
+    for Dequeue (remove from front) we create array like obj logic , who's timeComplexity is                 O(n)  and 
+    Space Complexity                                                                                         O(n)
+
+There For,
+    we can make a understanding that linked list is the best way still we have to create  owr logic with our some pointer system  
+    so ,
+        Use an array if the queue is relatively small,and you don't need to dequeue elements frequently, as shifting is O(n). 
+        "It's simpler but less efficient for large queues.
+        Use a linked list if you need fast dequeue operations (O(1)) and can handle the extra memory overhead for pointers. 
+        It's more efficient for large queues where you remove elements often.
+    And ,
+        Object could be used to represent a queue, but it doesn't naturally support operations like enqueue and dequeue
+        in the same way that an array does. While you can use an object to store elements, you'd still need to manage the queue manually
+        , and it would lack the same built-in functions that arrays provide.
+
+

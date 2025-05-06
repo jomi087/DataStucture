@@ -1,0 +1,2 @@
+Tc = No of Recurssion Call * Work in each Call ( operations in each call )
+Sc = Height of call Stack * memory in each stack
