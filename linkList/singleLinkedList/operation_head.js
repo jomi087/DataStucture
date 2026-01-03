@@ -146,7 +146,13 @@ class LinkedList {
         this.head = pri
     }
     
-    
+    //without mutating the link list printing in reverse way
+    printReverse(node = this.head) {
+        if (!node) return
+        this.printReverse(node.next)
+        console.log(node.value)
+    }
+
     print(){
          if(this.head == null){ 
             console.log('List is empty')
