@@ -1,4 +1,21 @@
 
+
+/** POINTS *******************************************************************
+ * removeCycle() 
+ * - Uses Floyd's Cycle Detection Algorithm (slow and fast pointers).
+ * - Detects whether a cycle exists, finds its starting node, were the cycle start
+ * 
+ * getNthNodeFromEnd(pos)
+ * - Uses the two-pointer technique.
+ * - Move the fast pointer `pos` steps ahead, then move both pointers
+ *
+ * isPalindrome()
+ * - Find the middle of the linked list using slow and fast pointers.
+ * - Reverse the second half of the list.
+ * - Compare the first half with the reversed second half.
+_________________________________________________________________________________________ */
+
+
 /**
  * head
  *  value , next -> value, next -> value, next 
