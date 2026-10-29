@@ -1,210 +1,438 @@
+
+/**
+ * head
+ *  value , next -> value, next -> value, next 
+ */
+
 class Node {
-    
-    constructor(value){
-        this.value = value // here "this" is representing the object which we are goign to make 
-        this.next = null
-    }
+  constructor(val) {
+    this.value = val
+    this.next = null
+  }
 }
 
-class LinkedList {
-    
-    constructor(){
-        this.head = null
-        this.size = 0  // size is required
+class SL {
+  constructor() {
+    this.head = null
+  }
+
+
+  insertAtTail(val) {
+    const newNode = new Node(val)
+
+    if (!this.head) {
+      return this.head = newNode
     }
 
-    getsize(){
-        console.log(this.size)
-    }
-    
-    addFirst(value=0){  //prepending
-        let newNode = new Node(value)
-        if( this.head == null){ 
-            this.head = newNode  
-        }else{       
-            newNode.next = this.head
-            this.head = newNode
-        }
-        this.size++
-    }
-    
-    addLast(value=0){  //appending
-        let newNode = new Node(value)
-        
-        if(this.head == null){
-            this.head = newNode
-        }else{
-            let currentNode = this.head
-            
-            while(currentNode.next){  //   [v/a[]],[v/a[]],[v/n]
-                currentNode = currentNode.next
-            }
-            currentNode.next = newNode   //  [v/a[]],[v/a[]],[v/newNOde] 
-        }
-        this.size++
-    }
-    
-    insert(value=0,index){  
-        
-        console.log(`value = ${value}, index = ${index}`)
-        if(index < 0 || index > this.size || index == undefined){
-            console.log('Wrong input')
-            return 
-        }
-        
-        if(index === 0){
-            this.addFirst(value)
-        }else{
-        let newNode = new Node(value)  //[5/null]
-        // head[200/400add]-[400/600add]-[600/null]
-            let pri = this.head
-            for(let i = 0 ; i < index-1 ; i++){ //1<2  //
-                pri = pri.next
-            }
-            newNode.next = pri.next  // assigne 600add from[400/600add]  to newnodes address [5/null] ie [5/600add]
-            pri.next = newNode // re-aasigned newnode adress (ie newnode) to revious node (ie from [400/600add] to [400/newNode] which ower here is [400/ 5add]  
-            this.size++
-        }
-    }
-    
-    removeFrom(index){
-        if(index<0 || index >= this.size){
-            return "Wrong input"
-        }
-        
-        let removedNode
-        
-        if(index === 0){
-            removedNode = this.head
-            this.head = this.head.next 
-        }else{
-            let pri = this.head
-            
-            for(let i = 0 ; i < index-1; i++){
-                pri = pri.next
-            }
-            removedNode = pri.next
-            pri.next = removedNode.next
-
-        }
-        this.size--
-        return removedNode.value
-    }
-    
-    removeValue(value){
-        if(this.head == null){
-            console.log('Wrong input')
-            return 
-        }
-        
-        if(this.head.value === value){
-            this.head = this.head.next
-             this.size--
-            return value
-        }else{
-            let pri = this.head
-            while(pri.next && pri.next.value != value){
-                pri = pri.next
-            }
-            if(pri.next){
-                let removedValue = pri.next 
-                pri.next = removedValue.next
-                this.size--
-                return value
-            }else{
-                return "Number is not in this linked List"
-            }
-        }
-    }
-    
-    serch(value){
-        if(this.head == null){
-            console.log('Wrong Output')
-        }
-        
-        let curr = this.head
-        for(let i = 0 ; curr ; i++){
-            if(curr.value == value){
-                return i
-            }
-            curr = curr.next
-        }
-        return "value not found in your linkedList"
-    }
-    
-    reverse(){  
-        let pri = null
-        let curr = this.head
-        
-        while(curr){
-            let next = curr.next
-            curr.next = pri
-            pri = curr
-            curr=next
-        }
-        
-        this.head = pri
-    }
-    
-    //without mutating the link list printing in reverse way
-    printReverse(node = this.head) {
-        if (!node) return
-        this.printReverse(node.next)
-        console.log(node.value)
+    let curr = this.head
+    while (curr.next) {
+      curr = curr.next
     }
 
-    print(){
-         if(this.head == null){ 
-            console.log('List is empty')
-        }else{
-            let curr = this.head
-            let Linklist = ""
-            while(curr){
-                Linklist = Linklist +`${curr.value} `
-                curr = curr.next
-            }
-            console.log(Linklist)
-        }
+    curr.next = newNode
+  }
+
+  insertAtHead(val) {
+    const newNode = new Node(val)  //  {val, null }
+    if (!this.head) {
+      return this.head = newNode
     }
+
+    newNode.next = this.head
+    this.head = newNode
+
+  }
+
+  /*
+    {
+      val : val
+      next : null
+    } 
+  */
+  findLength(node) {
+    if (!node) return 0;
+
+    let length = 1
+    while (node.next) {
+      node = node.next
+      length++
+    }
+    return length
+  }
+
+  insertAtPosition(val, pos) {
+    if (pos < 0) throw new Error("Invalid position")
+
+    if (pos === 0) {
+      return this.insertAtHead(val)
+    }
+
+    const newNode = new Node(val)
+    let curr = this.head
+    let step = 0
+
+    while (curr && step < pos - 1) {
+      curr = curr.next
+      step++
+    }
+
+    if (!curr) throw new Error("Invalid position")
+
+    newNode.next = curr.next
+    curr.next = newNode
+  }
+
+
+
+  deleteAtHead() {
+    if (!this.head) return null
+
+    this.head = this.head.next
+  }
+
+
+
+  deleteAtTail() {
+    if (!this.head) return null
+
+    if (!this.head.next) {
+      this.head = null
+      return
+    }
+
+    let prev = null
+    let curr = this.head
+
+    while (curr.next) {
+      prev = curr
+      curr = curr.next
+    }
+    prev.next = null
+
+  }
+
+
+
+  deleteAtPosition(pos) {
+    if (pos < 0) throw new Error("Invalid position")
+
+    if (!this.head) return null
+
+    if (pos == 0) {
+      return this.deleteAtHead()
+    }
+
+    let step = 0;
+    let curr = this.head
+
+    while (curr && step < pos - 1) {
+      curr = curr.next
+      step++
+    }
+
+    if (!curr || !curr.next) throw new Error("Invalid position")
+
+    curr.next = curr.next.next;
+  }
+
+
+
+  search(val) {
+    if (!this.head) return null
+
+    let curr = this.head
+
+    while (curr) {
+      if (curr.value === val) return true // or return node return curr
+
+      curr = curr.next
+    }
+
+    return false
+  }
+
+  traverse() {
+    if (!this.head) return null
+
+    let curr = this.head
+
+    while (curr) {
+      console.log(curr.value)
+      curr = curr.next
+    }
+  }
+
+
+
+  reverse() { // 1 -> 2 -> 3 -> null
+    if (!this.head) return null
+
+    let prev = null
+    let curr = this.head
+    let next = curr
+
+    while (curr) {
+      next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+    }
+
+    this.head = prev
+  }
+
+
+
+  findMiddle() {
+    if (!this.head) return null
+
+    let slow = this.head
+    let fast = this.head
+
+    while (fast && fast.next) {
+      fast = fast.next.next
+      slow = slow.next
+    }
+
+    return slow
+
+  }
+
+  isPalindrome() {
+    if (!this.head) return true // 1 → 2 → 3 → 2 → 1 → null
+
+    let slow = this.head
+    let fast = this.head
+    let pre = null
+
+    while (fast && fast.next) {
+      pre = slow
+      fast = fast.next.next
+      slow = slow.next
+    }
+
+    if (pre) {
+      pre.next = null;
+    }
+
+    let middle = slow
+
+    let prev = null
+    let curr = middle
+    let next = curr
+
+    while (curr) {
+      next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+    }
+
+    let secondHalf = prev
+    let firstHalf = this.head
+    let isPalindrome = true;
+
+
+    while (firstHalf && secondHalf) {
+      if (firstHalf.value !== secondHalf.value) {
+        isPalindrome = false
+        break
+      }
+      firstHalf = firstHalf.next
+      secondHalf = secondHalf.next
+    }
+
+    curr = prev
+    prev = null
+    next = curr
+
+    while (curr) {
+      next = curr.next
+      curr.next = prev
+      prev = curr
+      curr = next
+    }
+
+    if (pre) {
+      pre.next = prev
+    }
+    return isPalindrome
+  }
+
+
+
+  detectCycle() {
+    if (!this.head) return null
+
+    let slow = this.head
+    let fast = this.head
+
+    while (fast && fast.next) {
+      fast = fast.next.next
+      slow = slow.next
+
+      if (fast == slow) return true
+
+    }
+
+    return false
+
+  }
+
+
+
+  removeCycle() {
+    if (!this.head) return null
+
+    let slow = this.head
+    let fast = this.head
+
+    while (fast && fast.next) {
+      fast = fast.next.next
+      slow = slow.next
+
+      if (fast == slow) break;
+    }
+
+    if (!fast || !fast.next) return "no cycle found"
+
+
+    let d1 = this.head
+    let d2 = slow
+
+    while (d1 !== d2) {
+      d1 = d1.next
+      d2 = d2.next
+    }
+
+    let curr = d1
+
+    while (curr.next !== d1) {
+      curr = curr.next
+    }
+
+    curr.next = null
+  }
+
+
+  getNthNode(pos) {
+    if (pos < 1) {
+      throw new Error("Invalid position");
+    }
+
+    let curr = this.head;
+    let step = 1;
+
+    while (curr && step < pos) {
+      curr = curr.next;
+      step++;
+    }
+
+    if (!curr) {
+      throw new Error("Invalid position");
+    }
+
+    return curr;
+  }
+
+  getNthNodeFromEnd(n) {
+    if (n < 1) {
+      throw new Error("Invalid position");
+    }
+
+    let slow = this.head;
+    let fast = this.head;
+
+    // Move fast n nodes ahead
+    for (let i = 0; i < n; i++) {
+      if (!fast) {
+        throw new Error("Invalid position");
+      }
+      fast = fast.next;
+    }
+
+    // Move both pointers until fast reaches null
+    while (fast) {
+      slow = slow.next;
+      fast = fast.next;
+    }
+
+    return slow;
+  }
+
+
+
+  removeDuplicates() {
+    if (!this.head) return null;
+    const seen = new Set();
+
+    let curr = this.head
+    let prev = null
+
+    while (curr) {
+      if (seen.has(curr.value)) {
+        prev.next = curr.next
+      } else {
+        seen.add(curr.value);
+        prev = curr
+      }
+
+      curr = curr.next
+    }
+
+  }
+
+
+
+  mergeSortedLists(l1, l2) {
+    if (!l1 && !l2) return null
+
+    let left = l1
+    let right = l2
+
+    let dummyhead = new Node(0)
+    let curr = dummyhead
+
+    while (left && right) {
+      if (left.value < right.value) {
+        curr.next = left
+        left = left.next
+      } else {
+        curr.next = right
+        right = right.next
+      }
+      curr = curr.next
+    }
+
+    if (left) {
+      curr.next = left
+    } else {
+      curr.next = right
+    }
+
+
+    return dummyhead.next
+
+  }
+
+
 }
 
-const list = new LinkedList();
-list.addFirst(300)
-list.addLast(400)
-list.addFirst(200)
-list.addLast(600)
-list.getsize()
-list.print()
 
-console.log("\nInsert from here");
-
-list.getsize()
-list.insert(250,2)
-list.print()
-
-list.getsize()
-list.insert(10,0)
-list.print()
-list.getsize()
-
-console.log("\nRemove from index here");
-
-console.log(list.removeFrom(3))
-list.print()
-list.getsize()
-
-console.log("\nRemove from value here");
-console.log(list.removeValue(400))
-list.getsize()
-list.print()
-
-console.log('\nSerch value to get index from here')
-console.log(list.serch(600)+" index")
-console.log(list.serch(500))
-
-list.reverse()
-list.print()
+export { Node, SL };
 
 
-
-
+/** HINTS *******************************************************************
+ * removeCycle() 
+ * - Uses Floyd's Cycle Detection Algorithm (slow and fast pointers).
+ * - Detects whether a cycle exists, finds its starting node, were the cycle start
+ * 
+ * getNthNodeFromEnd(pos)
+ * - Uses the two-pointer technique.
+ * - Move the fast pointer `pos` steps ahead, then move both pointers
+ *
+ * isPalindrome()
+ * - Find the middle of the linked list using slow and fast pointers.
+ * - Reverse the second half of the list.
+ * - Compare the first half with the reversed second half.
+_________________________________________________________________________________________ */

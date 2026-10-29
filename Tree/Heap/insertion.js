@@ -15,7 +15,7 @@ class MaxHeap{
     }
     
     bubbleUp(){
-        let index = c - 1
+        let index = this.heap.length - 1
         
         while(index > 0 && this.heap[index] > this.heap[this.parentIndex(index)]){
             [this.heap[this.parentIndex(index)],this.heap[index]]=[this.heap[index],this.heap[this.parentIndex(index)]]

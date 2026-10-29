@@ -27,10 +27,3 @@ class lL{
     }
 }
 
-const l = new lL()
-let arr = [1,2,3]
-for( i of arr){
-    l.insert(i)
-}
-// console.log(JSON.stringify(l,null,2))
-console.log(l)

@@ -16,7 +16,7 @@ class Queue{ //FIFO             Tc = O(n) cz of shift
     }
     
     isEmpty(){
-        return this.item.length < 0
+        return this.item.length <= 0
     }
     
     size(){

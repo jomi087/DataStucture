@@ -7,7 +7,7 @@ let endIndex = arr.length-1
 
 function binarySearch(arr,trg,s,e){    //Tc= O(logn) & Sc = O(logn)
 
-    let mid = Math.floor(s / 2); // Ensure mid is an integer
+    let mid = Math.floor(s + e / 2); // Ensure mid is an integer
 
     if(e < s){
         return false

@@ -4,7 +4,7 @@ for (let i = 1; i < a.length; i++){                 //1,2,3,4
     num = a[i]                                      // indexed value
     let j = i - 1                                   // current index - 1 
     
-    while(num < a[j] && j >= 0){  //j=0
+    while(j >= 0 && num < a[j] ){  //j=0
          a[j+1] = a[j]
           j--
     }

@@ -54,7 +54,7 @@ bst2.insert(5)
 bst2.insert(8)
 bst2.insert(25)
 bst2.insert(3)
-bst2.insert(33)
+bst2.insert(33)                             
 
 console.log(bst1)
 console.log(bst2)

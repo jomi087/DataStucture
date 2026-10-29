@@ -61,7 +61,6 @@ class Trie{
     
         remove(this.root, word, 0);
     }
-    
 }
 
 const a = new Trie()

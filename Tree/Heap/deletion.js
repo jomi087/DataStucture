@@ -24,6 +24,7 @@ class MaxHeap{
             index = this.parentIndex(index)
         }
     }
+
     bubbleDown(){
         let index = 0 
         
@@ -39,6 +40,7 @@ class MaxHeap{
             if(rightChildIndex < this.heap.length && this.heap[rightChildIndex] > this.heap[largest]) {
                 largest = rightChildIndex
             }
+            
             if(largest === index)break;
             [this.heap[index], this.heap[largest]] = 
             [this.heap[largest], this.heap[index]];

@@ -1,9 +1,9 @@
 /*my logic  
 but there is a better way  (singleLinkedList way prepend way with head)
 As we jst need to make a code for lifo
- (so we wil be prepending and removing the 1st element like this (str from 1) 
+ (so we wil be prepending and removing the 1st element like this (start from 1) 
 5<4<3<2<1 
-5 is the last in so 5 will removed 1st  
+d 5 is the last in so 5 will remove1st  
 y Chose this way(singleLinkedList way prepend way with head) cz for this implimentation we will requre less code than my code   )
 */
 
