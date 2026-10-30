@@ -1,8 +1,8 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import factorial from '../../3.recursion/factorital.js';
 
-import factorial from '../../Recursion/factorital.js';
 
 // ============================================
 // 1. FIXED TEST CASES

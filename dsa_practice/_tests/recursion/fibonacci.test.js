@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import fibonacci from '../../rrecursion/febonachi.js';
+import fibonacci from '../../3.recursion/febonachi.js';
 
 // ============================================
 // 1. FIXED TEST CASES

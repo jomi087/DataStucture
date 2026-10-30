@@ -5,7 +5,7 @@ import {
   mergeSort,
   Ll,
   mergeSortLl,
-} from '../../sorting/mergeSort.js';
+} from '../../4.sorting/mergeSort.js';
 
 // ---------- Helpers ----------
 

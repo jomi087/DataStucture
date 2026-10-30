@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import insertionSort from '../../sorting/insertionSort.js';
+import insertionSort from '../../4.sorting/insertionSort.js';
 
 // ============================================
 // 1. FIXED TEST CASES

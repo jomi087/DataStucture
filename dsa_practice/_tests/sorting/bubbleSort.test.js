@@ -6,7 +6,7 @@ import {
     bubbleSort,
     Ll,
     bubbleSortLl
-} from '../../sorting/bubbleSort.js';
+} from '../../4.sorting/bubbleSort.js'
 
 // ============================================
 // HELPERS FOR LINKED LIST

@@ -1,8 +1,8 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import isSorted from '../../3.recursion/sortedArray.js';
 
-import isSorted from '../../Recursion/sortedArray.js';
 
 // ============================================
 // 1. FIXED TEST CASES

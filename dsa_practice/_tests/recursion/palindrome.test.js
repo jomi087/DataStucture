@@ -1,8 +1,8 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import isPalindrome from '../../3.recursion/palindrome.js';
 
-import isPalindrome from '../../Recursion/palindrome.js';
 
 // ============================================
 // 1. FIXED TEST CASES

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { quickSort } from '../../sorting/quickSort.js';
+import { quickSort } from '../../4.sorting/quickSort.js';
 
 // ---------- Helpers ----------
 

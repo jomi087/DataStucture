@@ -1,7 +1,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { binarySearchBoolean, binarySearchIndex } from '../../recursion/binaraySearch.js';
+import { binarySearchIndex, binarySearchBoolean } from '../../3.recursion/binaraySearch.js';
 
 
 // ============================================

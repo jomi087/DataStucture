@@ -1,8 +1,8 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import sum from '../../3.recursion/sum.js';
 
-import sum from '../../recursion/sum.js';
 
 // ============================================
 // 1. FIXED TEST CASES

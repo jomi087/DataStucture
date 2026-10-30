@@ -5,25 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "node --test",
-    "test:binary-search": "node --test tests/Recursion/binarySearch.test.js",
-    "test:factorial": "node --test tests/Recursion/factorial.test.js",
-    "test:fibonacci": "node --test tests/Recursion/fibonacci.test.js",
-    "test:sum": "node --test tests/Recursion/sum.test.js",
-    "test:sorted-array": "node --test tests/Recursion/sortedArray.test.js",
-    "test:palindrome": "node --test tests/Recursion/palindrome.test.js",
+    "test:binary-search": "node --test _tests/recursion/binarySearch.test.js",
+    "test:factorial": "node --test _tests/recursion/factorial.test.js",
+    "test:fibonacci": "node --test _tests/recursion/fibonacci.test.js",
+    "test:sum": "node --test _tests/recursion/sum.test.js",
+    "test:sorted-array": "node --test _tests/recursion/sortedArray.test.js",
+    "test:palindrome": "node --test _tests/recursion/palindrome.test.js",
     
-    "test:bubble-sort-Array": "node --test --test-name-pattern=\"Array Bubble Sort:\" tests/sorting/bubbleSort.test.js",
-    "test:bubble-sort-linked-list": "node --test --test-name-pattern=\"Linked List Bubble Sort:\" tests/sorting/bubbleSort.test.js",
-    "test:bubble-sort-Both": "node --test tests/sorting/bubbleSort.test.js",
+    "test:bubble-sort-Array": "node --test --test-name-pattern=\"Array Bubble Sort:\" _tests/sorting/bubbleSort.test.js",
+    "test:bubble-sort-linked-list": "node --test --test-name-pattern=\"Linked List Bubble Sort:\" _tests/sorting/bubbleSort.test.js",
+    "test:bubble-sort-Both": "node --test _tests/sorting/bubbleSort.test.js",
 
-    "test:insertion-sort": "node --test tests/sorting/insertionSort.test.js",
-    "test:selection-sort": "node --test tests/sorting/selectionSort.test.js",
+    "test:insertion-sort": "node --test _tests/sorting/insertionSort.test.js",
+    "test:selection-sort": "node --test _tests/sorting/selectionSort.test.js",
 
-    "test:merge-sort-Array": "node --test --test-name-pattern=\"Array Merge Sort:\" tests/sorting/mergeSort.test.js",
-    "test:merge-sort-linked-list": "node --test --test-name-pattern=\"Linked List Merge Sort:\" tests/sorting/mergeSort.test.js",
-    "test:merge-sort-Both": "node --test tests/sorting/mergeSort.test.js",
+    "test:merge-sort-Array": "node --test --test-name-pattern=\"Array Merge Sort:\" _tests/sorting/mergeSort.test.js",
+    "test:merge-sort-linked-list": "node --test --test-name-pattern=\"Linked List Merge Sort:\" _tests/sorting/mergeSort.test.js",
+    "test:merge-sort-Both": "node --test _tests/sorting/mergeSort.test.js",
   
-    "test:quick-sort": "node --test tests/sorting/quickSort.test.js",
+    "test:quick-sort": "node --test _tests/sorting/quickSort.test.js",
 
     "test:sl-ll" : "node --test _tests/linkList/sl_linkList.test.js"
   },

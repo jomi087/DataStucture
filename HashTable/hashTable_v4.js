@@ -75,7 +75,7 @@ class HashTable_v4 {
         break;
       }
 
-      if (currentEntry[0] === key) {
+      if (currentEntry?.[0] === key) {  // reason of optional chaining was i need to also  check if is not HashTable_v4.DELETED 
         currentEntry[1] = value
         return
       }
